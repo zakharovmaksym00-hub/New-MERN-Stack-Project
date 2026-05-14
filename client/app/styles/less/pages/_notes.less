@@ -1,0 +1,121 @@
+// Notes styles
+
+.notes {
+
+  .note {
+    background-color: @theme-secondary;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    min-height: 400px;
+    flex-direction: column;
+    justify-content: space-between;
+    .box-shadow(@box-shadow);
+    .flex();
+    .responsive(768px, {
+      min-height: 350px;
+    });
+
+    .delete-note-btn {
+      position: absolute;
+      right: -12px;
+      top: -15px;
+      .transition-transform(@transition-speed);
+
+      &:hover {
+        .translate(0, -2.5px);
+        .transition-transform(@transition-speed);
+      }
+    }
+  }
+
+  .rich-text-editor {
+    margin: 0;
+  }
+
+  .note-actions {
+    border-top: @border-default;
+    border-color: @theme-secondary-gray;
+    padding-top: 15px;
+    
+    .ant-btn {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Add note form styles
+
+.add-note-form {
+  background-color: @theme-light-gray;
+  height: 100%;
+
+  .add-note-box {
+    width: 100%;
+    padding: 15px;
+    min-height: 400px;
+    flex-direction: column;
+    justify-content: space-between;
+    .flex();
+    .responsive(768px, {
+      min-height: 350px;
+    });
+  }
+}
+
+// Hidden add note form styles
+
+.add-note-hidden {
+  background-color: @theme-light-gray;
+  height: 100%;
+  min-height: 400px;
+  .responsive(768px, {
+    min-height: 350px;
+  });
+  align-items: center;
+  justify-content: center;
+  .transition-transform(@transition-speed);
+  .flex();
+
+  &:hover {
+    .transition-transform(@transition-speed);
+    .scale(1.05);
+  }
+
+  .add-note-text {
+    margin-top: 10px;
+  }
+}
+
+
+// Add note link & Modal styles
+
+.add-note-link {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.notes-modal {
+
+  .add-note-form {
+    background-color: @white;
+
+    .note-actions {
+      border-top: @border-default;
+      border-color: @theme-secondary-gray;
+      padding-top: 15px;
+    }
+  }
+
+  .content-editable {
+    background-color: @theme-light-gray!important;
+  }
+
+  .draft-editor {
+
+    .public-DraftEditor-content {
+      background-color: @theme-light-gray!important;
+      min-height: 100px;
+    }
+  }
+}

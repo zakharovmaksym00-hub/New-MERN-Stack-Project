@@ -1,0 +1,40 @@
+.header {
+  border-bottom: @border-default;
+
+  .header-info {
+
+    .ant-btn {
+      border: none;
+      box-shadow: none;
+      
+      &:after {
+        content: none;
+      }
+    }
+  }
+ 
+
+  .ant-col {
+
+    &:nth-child(1) {
+      display: none;
+
+      .responsive(576px, {display: block;});
+    }
+  }
+
+  .menu-bars {
+    padding-left: 20px;
+  }
+}
+
+.header-user-dropdown {
+
+  i {
+    padding-right: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

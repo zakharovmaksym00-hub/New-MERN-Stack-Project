@@ -1,0 +1,132 @@
+.homepage {
+  text-align: center;
+  margin: 50px auto;
+}
+   
+.cube-animation {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  .flex();
+
+  .scene {
+    margin: 0px 60px;
+    .perspective(100px);
+    .size(100px, 100px);
+    .animation-name(cube-zoom);
+    .animation-duration(5s);
+    .animation-iteration-count(infinite);
+    .animation-fill-mode(forwards);
+    .animation-timing-function(ease);
+
+    .responsive(450px, {
+      margin: 0px 30px;
+    });
+  }
+
+  .cube {
+    position: relative;
+    transform-style: preserve-3d;
+    .size(100px, 100px);
+    .animation-name(cube);
+    .animation-duration(10s);
+    .animation-iteration-count(infinite);
+  }
+
+  .face {
+    border: @border-default;
+    color: @white;
+    font-size: @font-size-x-large;
+    position: absolute;
+    line-height: 100px;
+    text-align: center;
+    text-transform: capitalize;
+    .size(100px, 100px);
+    .backface-visibility(visible);
+  }
+
+  .front {
+    transform: rotateY(0deg) translateZ(50px);
+    background-color: @transparent-red;
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(50px);
+    background-color: @transparent-yellow;
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(50px);
+    background-color: @transparent-green;
+  }  
+
+  .left {
+    transform: rotateY(-90deg) translateZ(50px);
+    background-color: @transparent-dark-blue;
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(50px);
+    background-color: @transparent-light-blue;
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+    background-color: @transparent-dark-blue;
+  }
+
+  .keyframes( cube, {
+    0% {
+      transform: translateZ(-150px) rotateX(0deg);
+    }
+    15% {
+      transform: translateZ(-150px) rotateY(90deg) ;
+    }
+    25% {
+      transform: translateZ(-150px) rotateX(90deg) ;
+    }
+    40% {
+      transform: translateZ(-150px) rotateY(180deg) ;
+    }
+    50% {
+      transform: translateZ(-150px) rotateX(180deg) ;
+    }
+    65% {
+      transform: translateZ(-150px) rotateY(270deg) ;
+    }
+    75% {
+      transform: translateZ(-150px) rotateX(270deg) ;
+    }
+    90% {
+      transform: translateZ(-150px) rotateY(360deg) ;
+    }
+    100% {
+      transform: translateZ(-150px) rotateX(360deg) ;
+    }
+  });
+ 
+
+  .keyframes( cube-zoom, {
+    0% {
+      .scale(0.5) ;
+      opacity: 0;
+    }
+    25% {
+      .scale(0.9) ;
+      opacity: 0.3;
+    }
+    50% {
+      .scale( 1.3 ) ;
+      opacity: 0.5;
+    }
+    75% {
+      .scale(1.6) ;
+      opacity: 1.7;
+    }
+    100% {
+      .scale(2) ;
+      opacity: 1;
+    }
+  });
+}

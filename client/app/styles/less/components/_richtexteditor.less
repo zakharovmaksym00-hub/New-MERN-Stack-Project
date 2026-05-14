@@ -1,0 +1,45 @@
+.rich-text-editor {
+  width: 100%;
+  margin-bottom: 8px;
+ 
+  .draft-editor {
+    margin-bottom: 8px;
+
+    .public-DraftEditor-content {
+      background-color: @white;
+      border: @border-default;
+      padding: 10px;
+      min-height: 100px;
+      width: 100%;
+      .border-radius(4px);
+      .transition(@transition-speed);
+
+      &:hover {
+        border-color: @border-color;
+        .transition(@transition-speed);
+      }
+
+      &:focus {
+        border-color: @border-color;
+        .box-shadow(@box-shadow);
+      }
+    }
+  }
+
+  .draft-editor.danger {
+
+    .public-DraftEditor-content {
+      border: @border-default;
+      border-color: @error-color;
+
+      &:focus {
+        border-color: @error-color;
+        .box-shadow(@box-shadow-error);
+      }
+    }
+  }
+
+  .editor-actions {
+    text-align: center;
+  }
+}
